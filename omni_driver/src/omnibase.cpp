@@ -117,7 +117,7 @@ OmniBase::OmniBase(const std::string &name, const std::string &path_urdf, const 
     SRDFModelPtr srdf_model = SRDFModelPtr( new srdf::Model() );
     srdf_model->initFile(*urdf_model, path_srdf);
 
-    kinematic_model = robot_model::RobotModelPtr( new robot_model::RobotModel(urdf_model, srdf_model) );
+    kinematic_model = moveit::core::RobotModelPtr( new moveit::core::RobotModel(urdf_model, srdf_model) );
 
     ROS_INFO("Model frame: %s", kinematic_model->getModelFrame().c_str());
     kinematic_state = robot_state::RobotStatePtr(new robot_state::RobotState(kinematic_model));

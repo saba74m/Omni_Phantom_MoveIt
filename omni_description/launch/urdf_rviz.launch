@@ -1,0 +1,33 @@
+<!--  Author: Saba Mansourfar 
+  University: Politecnico Di Milano
+   Labratory: NearLAB
+       Robot: Omni Phantom
+
+**Important Notice: 
+USE: 'roslaunch omni_description urdf_rviz.launch' -->
+
+<launch>
+  <!-- Define some arguments to be used in the script-->
+   <!-- Loading the robot model -->
+   <arg name="model" default="$(find omni_description)/urdf/omni.urdf"/>
+  
+   <!-- If set to "true" it will send Fake Joint Values -->
+   <arg name="use_gui" default="true" />
+  
+   <!-- Saved location of the rviz configuration -->
+   <arg name="rvizconfig" default="$(find omni_description)/config/urdf_rviz.rviz" />
+
+ <!-- Load the URDF into the ROS Parameter Server -->  
+ <param name="robot_description" command="cat '$(arg model)'" />
+
+ <!-- send joint values -->
+  <node     if="$(arg use_gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node unless="$(arg use_gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+ 
+ <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+ 
+ <!-- Rviz -->
+  <node name="rviz" pkg="rviz" type="rviz"  required="true" />
+
+</launch>

@@ -1,0 +1,26 @@
+digraph G {
+node [shape=box];
+"base" [label="base"];
+"torso" [label="torso"];
+"upper_arm" [label="upper_arm"];
+"lower_arm" [label="lower_arm"];
+"wrist" [label="wrist"];
+"tip" [label="tip"];
+"end_effector" [label="end_effector"];
+"stylus" [label="stylus"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base" -> "waist" [label="xyz: 0 0 0.09 \nrpy: 0 -0 0"]
+"waist" -> "torso"
+"torso" -> "shoulder" [label="xyz: -0.0075 0 0.035 \nrpy: 0.23 -0 0"]
+"shoulder" -> "upper_arm"
+"upper_arm" -> "elbow" [label="xyz: 0.0075 0.134 0 \nrpy: -2.15 0 0"]
+"elbow" -> "lower_arm"
+"lower_arm" -> "wrist1" [label="xyz: 0 0.08 0 \nrpy: 0 -0 0"]
+"wrist1" -> "wrist"
+"wrist" -> "wrist2" [label="xyz: 0 0.0525 0 \nrpy: -0.85 0 0"]
+"wrist2" -> "tip"
+"tip" -> "effector_transform" [label="xyz: 0 0.031 0 \nrpy: 0 -0 0"]
+"effector_transform" -> "end_effector"
+"tip" -> "wrist3" [label="xyz: 0 -0.023 0 \nrpy: 0 -0 0"]
+"wrist3" -> "stylus"
+}
