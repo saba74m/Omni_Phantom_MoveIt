@@ -17,3 +17,6 @@ controller_list:
       - wrist1
       - wrist2
       - wrist3
+initial:  # Define initial robot poses.
+  - group: all
+    pose: Docked
