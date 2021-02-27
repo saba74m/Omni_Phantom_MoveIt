@@ -22,7 +22,7 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  - name: all_controller
+  - name: phantom_omni/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
@@ -30,22 +30,6 @@ controller_list:
       - waist
       - shoulder
       - elbow
-      - wrist1
-      - wrist2
-      - wrist3
-  - name: actuated_controller
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
-      - waist
-      - shoulder
-      - elbow
-  - name: passive_controller
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
       - wrist1
       - wrist2
       - wrist3

@@ -1,0 +1,17 @@
+
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find omni_control)/config/omni_control.yaml" command="load"/>
+  <rosparam file="$(find omni_control)/config/gazebo_ros_control.yaml" command="load"/>
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="controller_manager" respawn="false"
+    output="screen" ns="/omni_phantom" args="spawn joint_state_controller joint_trajectory_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/omni_phantom/joint_states" />
+  </node>
+
+</launch>

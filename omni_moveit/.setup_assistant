@@ -6,6 +6,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/phantom_omni.srdf
   CONFIG:
-    author_name: Bruno Guilhermo de Barros Valerio
-    author_email: bruno.gbv@poli.ufrj.br
-    generated_timestamp: 1614179946
+    author_name: Saba Mansourfar
+    author_email: saba.mansourfar@mail.polimi.it
+    generated_timestamp: 1614355285

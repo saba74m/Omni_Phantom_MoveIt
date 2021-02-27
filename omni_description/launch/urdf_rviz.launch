@@ -9,7 +9,7 @@ USE: 'roslaunch omni_description urdf_rviz.launch' -->
 <launch>
   <!-- Define some arguments to be used in the script-->
    <!-- Loading the robot model -->
-   <arg name="model" default="$(find omni_description)/urdf/omni.urdf"/>
+   <arg name="model" default="$(find omni_description)/urdf/omni_table.urdf"/>
    
    <!-- If set to "true" it will send Fake Joint Values -->
    <arg name="use_gui" default="true" />

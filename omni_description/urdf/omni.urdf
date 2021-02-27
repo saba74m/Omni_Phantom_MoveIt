@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="phantom_omni" xmlns:xacro="http://www.ros.org/wiki/xacro">
 	
-	<!-- Materials -->
+<!-- Materials -->
 	<material name="metal_seamed">
 		<color rgba="0.4627450980392157 0.4666666666666667 0.4509803921568628 1.0" />
 	</material>
@@ -14,6 +14,14 @@
 	
 	<!-- Links -->
   <link name="base" >
+  	<inertial>
+			<mass value="0.3"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.01"
+             iyy="0.01"
+             izz="0.01"
+             ixy="0" iyz="0" ixz="0"/>
+		</inertial>
     <visual>
 			<origin xyz="0 -0.02 0" />
       <geometry>
@@ -21,8 +29,24 @@
       </geometry>
       <material name="metal_seamed"/>
     </visual>
+    <collision>
+			<origin xyz="0 -0.02 0" />
+      <geometry>
+				<mesh filename="package://omni_description/meshes/base.stl" />
+      </geometry>
+      <material name="metal_seamed"/>
+    </collision>
   </link>
+	<!-- Link -->
   <link name="torso" >
+  	<inertial>
+			<mass value="0.2"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.01"
+             iyy="0.01"
+             izz="0.01"
+             ixy="0" iyz="0" ixz="0"/>
+		</inertial>
     <visual>
 			<origin xyz="0 0 0.036" rpy="-1.5707 0 0"/>
       <geometry>
@@ -30,8 +54,24 @@
       </geometry>
       <material name="blue"/>
     </visual>
+    <collision>
+			<origin xyz="0 0 0.036" rpy="-1.5707 0 0"/>
+      <geometry>
+				<mesh filename="package://omni_description/meshes/torso.stl" />
+      </geometry>
+      <material name="blue"/>
+    </collision>    
   </link>
+	<!-- Link -->
   <link name="upper_arm" >
+    <inertial>
+			<mass value="0.1"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.01"
+             iyy="0.01"
+             izz="0.01"
+             ixy="0" iyz="0" ixz="0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.0075 0 0" rpy="0 0 0"/>
       <geometry>
@@ -39,8 +79,24 @@
       </geometry>
       <material name="metal_seamed" />
     </visual>
+		<collision>
+			<origin xyz="0.0075 0 0" rpy="0 0 0"/>
+      <geometry>
+				<mesh filename="package://omni_description/meshes/upper_arm.stl" />
+      </geometry>
+      <material name="metal_seamed" />
+    </collision>
   </link>
+	<!-- Link -->
   <link name="lower_arm" >
+    <inertial>
+			<mass value="0.1"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.01"
+             iyy="0.01"
+             izz="0.01"
+             ixy="0" iyz="0" ixz="0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0 0 0" rpy="1.5707 0 0"/>
       <geometry>
@@ -48,8 +104,24 @@
       </geometry>
       <material name="metal_seamed" />
     </visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="1.5707 0 0"/>
+      <geometry>
+				<mesh filename="package://omni_description/meshes/lower_arm.stl" />
+      </geometry>
+      <material name="metal_seamed" />
+    </collision>
   </link>
+	<!-- Link -->
   <link name="wrist" >
+    <inertial>
+			<mass value="0.2"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.01"
+             iyy="0.01"
+             izz="0.01"
+             ixy="0" iyz="0" ixz="0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0 0 0" rpy="3.14159 0 0"/>
       <geometry>
@@ -57,8 +129,24 @@
       </geometry>
       <material name="metal_seamed" />
     </visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="3.14159 0 0"/>
+      <geometry>
+				<mesh filename="package://omni_description/meshes/wrist.stl" />
+      </geometry>
+      <material name="metal_seamed" />
+    </collision>
   </link>
+	<!-- Link -->
   <link name="tip" >
+    <inertial>
+			<mass value="0.1"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.01"
+             iyy="0.01"
+             izz="0.01"
+             ixy="0" iyz="0" ixz="0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0 0 0" rpy="1.5707 0 0"/>
       <geometry>
@@ -66,8 +154,24 @@
       </geometry>
       <material name="metal_seamed" />
     </visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="1.5707 0 0"/>
+      <geometry>
+				<mesh filename="package://omni_description/meshes/tip.stl" />
+      </geometry>
+      <material name="metal_seamed" />
+    </collision>
   </link>
+  <!-- Link -->
   <link name="stylus" >
+    <inertial>
+			<mass value="0.1"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.01"
+             iyy="0.01"
+             izz="0.01"
+             ixy="0" iyz="0" ixz="0"/>
+		</inertial>
     <visual>
 			<origin xyz="0 0.013 0" rpy="1.5707 -1.5707 0"/>
       <geometry>
@@ -75,7 +179,15 @@
       </geometry>
       <material name="blue" />
     </visual>
+    <collision>
+			<origin xyz="0 0.013 0" rpy="1.5707 -1.5707 0"/>
+      <geometry>
+				<mesh filename="package://omni_description/meshes/pen.stl" />
+      </geometry>
+      <material name="blue" />
+    </collision>   
   </link>
+  <!-- Link -->
   <link name="end_effector" >
   </link>
   
@@ -123,11 +235,119 @@
     <axis xyz="0 1 0" />
     <limit lower="-2.34" upper="2.34" velocity="100" effort="5" />
   </joint>
-
   <joint name="effector_transform" type="fixed">
       <parent link="tip" />
       <child link="end_effector" />
       <origin xyz="0 0.031 0" rpy="0 0 0" />
   </joint>
+
+  <!-- Gazebo Configurations -->
+  <transmission name="trans_waist">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="waist">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="waist_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+  </transmission>
+  <transmission name="trans_shoulder">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="shoulder">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="shoulder_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+  </transmission>
+  <transmission name="trans_elbow">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="elbow">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="elbow_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+  </transmission>
+  <transmission name="trans_wrist1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+  </transmission>
+  <transmission name="trans_wrist2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist2_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+  </transmission>
+  <transmission name="trans_wrist3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="wrist3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="wrist3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+  </transmission>
+
+	<gazebo reference="base">
+			<gravity>true</gravity>
+			<material>Gazebo/Metal_seamed</material>
+		</gazebo>
+
+	<gazebo reference="torso">
+			<gravity>true</gravity>
+			<material>Gazebo/Blue</material>
+		</gazebo>
+
+	<gazebo reference="upper_arm">
+			<gravity>true</gravity>
+			<material>Gazebo/Metal_seamed</material>
+		</gazebo>
+
+	<gazebo reference="lower_arm">
+			<gravity>true</gravity>
+			<material>Gazebo/Metal_seamed</material>
+		</gazebo>
+
+	<gazebo reference="wrist">
+			<gravity>true</gravity>
+			<material>Gazebo/Metal_seamed</material>
+		</gazebo>
+
+	<gazebo reference="tip">
+			<gravity>true</gravity>
+			<material>Gazebo/Metal_seamed</material>
+		</gazebo>
+
+	<gazebo reference="end_effector">
+			<gravity>true</gravity>
+			<material>Gazebo/Metal_seamed</material>
+		</gazebo>
+
+	<gazebo reference="stylus">
+			<gravity>true</gravity>
+			<material>Gazebo/Blue</material>
+		</gazebo>
+
+  <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/phantom_omni</robotNamespace>
+        </plugin>
+  </gazebo>
+
 </robot>
 

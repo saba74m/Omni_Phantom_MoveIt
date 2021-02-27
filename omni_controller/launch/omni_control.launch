@@ -1,12 +1,8 @@
 <launch>
-	<param name="omni_robot_description" command="cat $(find omni_fw_description)/urdf/omni.urdf" />
+	<param name="omni_robot_description" command="cat $(find omni_description)/urdf/omni.urdf" />
 
-    <node name="omni" pkg="omni_driver" type="omni_driver" output="screen">
-			<param name="omni_name" type="string" value="" />
-			<param name="omni_serial" type="string" value="" />
-	</node>
 
-	<group ns="omni">
+	<group ns="omni_phantom">
 
 		<node name="state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
 			<param name="publish_frequency" type="double" value="400.0" />

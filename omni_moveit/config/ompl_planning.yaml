@@ -149,6 +149,7 @@ all:
   projection_evaluator: joints(waist,shoulder)
   longest_valid_segment_fraction: 0.005
 actuated:
+  default_planner_config: SBL
   planner_configs:
     - SBL
     - EST
@@ -176,6 +177,7 @@ actuated:
   projection_evaluator: joints(waist,shoulder)
   longest_valid_segment_fraction: 0.005
 passive:
+  default_planner_config: SBL
   planner_configs:
     - SBL
     - EST
