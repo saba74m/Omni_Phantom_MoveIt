@@ -288,60 +288,60 @@
   <transmission name="trans_waist">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="waist">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="waist_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
   </transmission>
   <transmission name="trans_shoulder">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="shoulder">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="shoulder_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
   </transmission>
   <transmission name="trans_elbow">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="elbow">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="elbow_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
   </transmission>
   <transmission name="trans_wrist1">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="wrist1">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="wrist1_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
   </transmission>
   <transmission name="trans_wrist2">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="wrist2">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="wrist2_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
   </transmission>
   <transmission name="trans_wrist3">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="wrist3">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="wrist3_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
   </transmission>
@@ -388,7 +388,7 @@
 
   <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/phantom_omni</robotNamespace>
+            <robotNamespace>/omni_phantom</robotNamespace>
         </plugin>
   </gazebo>
 

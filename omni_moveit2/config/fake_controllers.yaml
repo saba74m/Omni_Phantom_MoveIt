@@ -4,6 +4,9 @@ controller_list:
       - waist
       - shoulder
       - elbow
+      - wrist1
+      - wrist2
+      - wrist3
   - name: fake_actuated_controller
     joints:
       - waist
@@ -11,7 +14,9 @@ controller_list:
       - elbow
   - name: fake_passive_controller
     joints:
-      []
+      - wrist1
+      - wrist2
+      - wrist3
 initial:  # Define initial robot poses.
   - group: all
     pose: Docked
